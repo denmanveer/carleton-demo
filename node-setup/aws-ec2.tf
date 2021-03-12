@@ -30,7 +30,7 @@ resource "aws_instance" "ec2" {
 
 
     # downloading files
-    aws s3 cp s3:\/\/${var.ec2_demo_data_location}/file_reader-master/ /home/ec2-user/file-reader/ --recursive
+    aws s3 cp s3:\/\/${var.ec2_demo_data_location}/file_reader/master/ /home/ec2-user/file-reader/ --recursive
     export PUBLIC_IP=$(curl -s X GET http://169.254.169.254/latest/meta-data/public-ipv4)
     echo $PUBLIC_IP > /home/ec2-user/ec2_info
     echo done > /home/ec2-user/done.log

@@ -24,6 +24,7 @@ resource "aws_instance" "ec2" {
     # Jenkins Setup
     sudo docker network create jenkins
     sudo yum install java-1.8.0 -y
+    sudo yum install git -y
     sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
     sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
     sudo yum install jenkins -y
